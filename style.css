@@ -1,0 +1,13 @@
+button {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: #aaa;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+    color: #fff;
+}

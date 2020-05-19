@@ -1,0 +1,17 @@
+{
+    "name": "Youtube to Spotify",
+    "version": "1.0",
+    "description": "Add current youtube song to spotify",
+    "manifest_version": 2,
+    "permissions": [
+        "activeTab"
+      ],
+    "content_scripts": [
+        {
+        "matches": ["https://*.youtube.com/*"],
+          "js": ["script.js"],
+          "css": ["style.css"],
+          "run_at": "document_end"
+        }
+    ]
+}
