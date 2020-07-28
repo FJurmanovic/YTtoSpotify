@@ -9,7 +9,7 @@
     "content_scripts": [
         {
         "matches": ["https://*.youtube.com/*"],
-          "js": ["env.js", "script.js"],
+          "js": ["app.js"],
           "css": ["style.css"],
           "run_at": "document_end"
         }
