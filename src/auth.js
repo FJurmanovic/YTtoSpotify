@@ -4,24 +4,19 @@ const client_secret = "5afba306e6a44182813f8cd266aaf53c";
 const state = require ("./state");
 
 var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
+    method: "POST",
     headers: {
       'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
     },
-    form: {
+    body: {
       grant_type: 'client_credentials'
-    },
-    json: true
+    }
   };
 
-async function auth() {
-    const data = await fetch(authOptions)
+const auth = async function () {
+    const data = await fetch('https://accounts.spotify.com/api/token', authOptions)
+    console.log(data)
     state.token().change(data);
 }
 
-function runAuth() {
-    auth();
-    return 0;
-}
-
-module.exports = runAuth();
+module.exports = auth;

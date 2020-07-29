@@ -11,7 +11,7 @@ function addButton() {
     newBtn.addEventListener("click", function(event) {
         console.log("pressed")
         auth();
-        state.token().get();
+        console.log(state.token().get());
         getSongName().then(songName => {
             getSongId(songName).then(songId => {
                 saveToLiked(songId).then(saved => console.log("Saved!"))
